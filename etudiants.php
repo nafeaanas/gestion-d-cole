@@ -24,23 +24,25 @@
     <?php require_once 'navbar.php'; ?>
 
     <div class="container-fluid py-4">
-      <!-- table parents -->
+      <!-- tale étudiants -->
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>parents</h6>
+              <h6>étudiants</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
+                <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Usermane</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Genre</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Job</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Parents</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phone</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de naissance</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody></tbody>
