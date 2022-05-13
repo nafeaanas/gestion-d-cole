@@ -70,6 +70,14 @@
                       <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name">
                     </div>
                     <div class="mb-3">
+                      <select class="form-select">
+                        <option selected>Choose Your Role</option>
+                        <option>Administrator</option>
+                        <option>Teacher</option>
+                        <option>Other...</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
                       <input type="password" class="form-control" placeholder="Password" aria-label="Password">
                     </div>
                     <div class="mb-3">
