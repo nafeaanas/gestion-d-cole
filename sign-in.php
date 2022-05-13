@@ -4,52 +4,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
-  <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
-  <link href="assets/css/nucleo-svg.css" rel="stylesheet"/>
+  <!-- <link href="assets/css/nucleo-icons.css" rel="stylesheet"/> -->
+  <!-- <link href="assets/css/nucleo-svg.css" rel="stylesheet"/> -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="assets/css/nucleo-svg.css" rel="stylesheet"/>
+  <!-- <link href="assets/css/nucleo-svg.css" rel="stylesheet"/> -->
   <link id="pagestyle" href="assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet"/>
   <title>Sign-in Dashboard</title>
 </head>
 
 <body class="">
   <!-- Navbar -->
-  <div class="container position-sticky z-index-sticky top-0">
-    <div class="row">
-      <div class="d-flex justify-content-center">
-        <nav class="navbar navbar-expand-lg w-50 blur border-radius-lg z-index-3 shadow position-absolute mt-4 py-2">
-          <div class="container-fluid">
-            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon mt-2">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navigation">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <a class="nav-link me-2" href="pages/sign-up.html">
-                    <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
-                    Sign Up
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link me-2" href="pages/sign-in.html">
-                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                    Sign In
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </div>
+  <?php require_once 'navbar_in-up.php'; ?>
 
   <main class="main-content  mt-0">
     <section>
@@ -66,10 +32,10 @@
                 <div class="card-body">
                   <form role="form">
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                      <input type="text" class="form-control form-control-lg" placeholder="Name" aria-label="Name">
                     </div>
                     <div class="mb-3">
-                      <input type="email" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                      <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
                     </div>
                     <div class="form-check form-switch">
                       <input class="form-check-input" type="checkbox" id="rememberMe">
@@ -83,7 +49,7 @@
                 <div class="text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     Don't have an account?
-                    <a href="javascript:;" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    <a href="sign-up.php" class="text-primary text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </div>
               </div>
