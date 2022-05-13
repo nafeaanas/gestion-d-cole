@@ -13,7 +13,7 @@
   <title>Sign-in Dashboard</title>
 </head>
 
-<body class="">
+<body>
   <!-- Navbar -->
   <?php require_once 'navbar_in-up.php'; ?>
 
