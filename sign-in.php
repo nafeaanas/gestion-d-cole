@@ -70,3 +70,6 @@
 
 </body>
 </html>
+
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/bootstrap.min.js"></script>

@@ -108,7 +108,7 @@
       </div>
 
       <div class="row mt-5">
-        <div class="col-lg-5">
+        <div class="col-lg-5 mb-5">
           <div class="card">
             <div class="card-header pb-0 p-3">
               <h6 class="mb-0">genre</h6>
@@ -148,13 +148,25 @@
           </div>
         </div>
 
-        <div class="col-lg-5">
-          <div class="card">
-            <div class="card-header pb-0 p-3">
-              <h6 class="mb-0">class</h6>
+        <div class="col-lg-7">
+          <div class="card pb-3">
+            <div class="card-header pb-4 p-3">
+              <h6 class="mb-0">classe</h6>
+            </div>
+            <div class="col-11 mx-auto border-start border-bottom border-3 position-relative gap-3" style="height: 200px;">
+              <div class="col-1 position-absolute top-0 end-0">
+                <div class="bg-success" style="width: 20px; height: 20px;"></div>
+                <div class="bg-info" style="width: 20px; height: 20px;"></div>
+                <div class="bg-danger" style="width: 20px; height: 20px;"></div>
+              </div>
+              <div class="position-absolute bottom-0 w-100 mx-3 d-flex align-items-end gap-3">
+                <div class="rounded-top bg-success" style="width: 50px; height: 60px;"></div>
+                <div class="rounded-top bg-info" style="width: 50px; height: 20px;"></div>
+                <div class="rounded-top bg-danger" style="width: 50px; height: 80px;"></div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </main>

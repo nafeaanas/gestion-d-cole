@@ -63,11 +63,13 @@
                 </div>
                 <div class="card-body">
                   <form role="form">
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="First Name" aria-label="First Name">
-                    </div>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                    <div class="d-flex">
+                      <div class="mb-3" style="width: 48%;">
+                        <input type="text" class="form-control" placeholder="First Name" aria-label="First Name">
+                      </div>
+                      <div class="mb-3" style="width: 48%; margin-left: 4%;">
+                        <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                      </div>
                     </div>
                     <div class="mb-3">
                       <select class="form-select">
@@ -107,3 +109,6 @@
 
 </body>
 </html>
+
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/bootstrap.min.js"></script>
