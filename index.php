@@ -154,15 +154,24 @@
               <h6 class="mb-0">classe</h6>
             </div>
             <div class="col-11 mx-auto border-start border-bottom border-3 position-relative gap-3" style="height: 200px;">
-              <div class="col-1 position-absolute top-0 end-0">
-                <div class="bg-success" style="width: 20px; height: 20px;"></div>
-                <div class="bg-info" style="width: 20px; height: 20px;"></div>
-                <div class="bg-danger" style="width: 20px; height: 20px;"></div>
+              <div class="col-2 position-absolute top-0 end-0">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="bg-success" style="width: 20px; height: 20px;"></div>
+                  <span>Classe 1</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="bg-info" style="width: 20px; height: 20px;"></div>
+                  <span>Classe 2</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="bg-danger" style="width: 20px; height: 20px;"></div>
+                  <span>Classe 3</span>
+                </div>
               </div>
-              <div class="position-absolute bottom-0 w-100 mx-3 d-flex align-items-end gap-3">
-                <div class="rounded-top bg-success" style="width: 50px; height: 60px;"></div>
-                <div class="rounded-top bg-info" style="width: 50px; height: 20px;"></div>
-                <div class="rounded-top bg-danger" style="width: 50px; height: 80px;"></div>
+              <div class="position-absolute bottom-0 w-100 mx-3 d-flex align-items-end gap-3 text-center text-dark">
+                <div class="rounded-top bg-success" style="width: 50px; height: 60px;">60</div>
+                <div class="rounded-top bg-info" style="width: 50px; height: 20px;">20</div>
+                <div class="rounded-top bg-danger" style="width: 50px; height: 80px;">80</div>
             </div>
           </div>
         </div>
