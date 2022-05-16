@@ -13,7 +13,7 @@
   <title>Sign-in Dashboard</title>
 </head>
 
-<body class="">
+<body>
   <!-- Navbar -->
   <?php require_once 'navbar_in-up.php'; ?>
 
@@ -63,11 +63,21 @@
                 </div>
                 <div class="card-body">
                   <form role="form">
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="First Name" aria-label="First Name">
+                    <div class="d-flex">
+                      <div class="mb-3" style="width: 48%;">
+                        <input type="text" class="form-control" placeholder="First Name" aria-label="First Name">
+                      </div>
+                      <div class="mb-3" style="width: 48%; margin-left: 4%;">
+                        <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                      </div>
                     </div>
                     <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name">
+                      <select class="form-select">
+                        <option selected>Choose Your Role</option>
+                        <option>Administrator</option>
+                        <option>Teacher</option>
+                        <option>Other...</option>
+                      </select>
                     </div>
                     <div class="mb-3">
                       <input type="password" class="form-control" placeholder="Password" aria-label="Password">
@@ -99,3 +109,6 @@
 
 </body>
 </html>
+
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/bootstrap.min.js"></script>
