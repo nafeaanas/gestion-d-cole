@@ -3,10 +3,12 @@
 <body class="g-sidenav-show bg-gray-100">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
   <!-- Assidbar -->
+
   <?php require APPROOT . '/views/inc/sidebar.php'; ?>
 
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
+
     <?php require APPROOT . '/views/inc/navbar.php'; ?>
 
     <div class="container-fluid py-4">
@@ -14,12 +16,11 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center pb-0">
-              <h3 class="text-uppercase text-sm">étudiants</h3>
-              <button type="button" class="btn btn-primary">Add</button>
+            <div class="card-header pb-0">
+              <h6>étudiants</h6>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
-              <div class="table-responsive p-0 overflow-hidden">
+            <div class="table-responsive p-0 overflow-hidden">
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>

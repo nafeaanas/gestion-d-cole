@@ -2,9 +2,20 @@
 
 
 class Users extends Controller{
+
     public function __construct()
     {
         $this->userModel = $this->model('User');
+    }
+
+    public function index(){
+
+        $User = $this->userModel->getUser();
+        $data = [
+            'Users' => $User
+        ];
+
+        $this->view('users/index', $data);
     }
 
     public function register(){

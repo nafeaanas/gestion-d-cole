@@ -155,9 +155,9 @@
                 </div>
               </div>
               <div class="position-absolute bottom-0 w-100 mx-3 d-flex align-items-end gap-3 text-center text-dark">
-                <div class="rounded-top bg-success" style="width: 50px; height: 60px;">60</div>
-                <div class="rounded-top bg-info" style="width: 50px; height: 20px;">20</div>
-                <div class="rounded-top bg-danger" style="width: 50px; height: 80px;">80</div>
+                <div class="rounded-top bg-success text-uppercase font-weight-bolder" style="width: 50px; height: 60px;">60</div>
+                <div class="rounded-top bg-info text-uppercase font-weight-bolder" style="width: 50px; height: 20px;">20</div>
+                <div class="rounded-top bg-danger text-uppercase font-weight-bolder" style="width: 50px; height: 80px;">80</div>
             </div>
           </div>
         </div>
