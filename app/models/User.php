@@ -7,6 +7,14 @@ class User {
         $this->db = new Database;
     }
 
+    public function getUser(){
+
+        $this->db->query('SELECT * FROM `administrateur`');
+        $result = $this->db->resultSet();
+        return $result;
+
+    }
+
     //register new user
     public function register($data){
         $this->db->query('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)');

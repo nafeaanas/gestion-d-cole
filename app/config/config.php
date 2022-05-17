@@ -3,12 +3,12 @@
   define('DB_HOST', 'localhost');
   define('DB_USER', 'root');
   define('DB_PASS', '');
-  define('DB_NAME', 'gestion_ecole');
+  define('DB_NAME', 'gestion-d-ecole');
 
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/gestion_ecole');
+  define('URLROOT', 'http://localhost/shareposts');
   // Site Name
   define('SITENAME', 'Emmizy MVC Frame');
   // App Version
