@@ -35,26 +35,26 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($data['etudiants'] as $etudiant) : ?>
-                      <tr>
-                        <td class="col-2"><?php echo  $etudiant->nom_complet ;?></td>
-                        <td class="col-1"><?php echo  $etudiant->genre ;?></td>
-                        <td class="col-1"><?php echo  $etudiant->class ;?></td>
-                        <td class="col-3"><?php echo  $etudiant->parent ;?></td>
-                        <td class="col-1"><?php echo  $etudiant->adresse ;?></td>
-                        <td class="col-1"><?php echo  $etudiant->date_de_naissance ;?></td>
-                        <td class="col-2"><?php echo  $etudiant->email ;?></td>
-                        <th class="col-1 nav-item dropdown">
-                          <p href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-three-dots-vertical"></i>
-                          </p>
-                          <ul class="dropdown-menu" style="width: 30px;" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Edite</a></li>
-                            <li><a class="dropdown-item" href="#">Delete</a></li>
-                          </ul>
-                        </th>
-                      </tr>
-                  <?php endforeach ;?>
+                    <?php foreach ($data['etudiants'] as $etudiant) : ?>
+                        <tr>
+                          <td class="col-2"><?php echo  $etudiant->nom_complet ;?></td>
+                          <td class="col-1"><?php echo  $etudiant->genre ;?></td>
+                          <td class="col-1"><?php echo  $etudiant->class ;?></td>
+                          <td class="col-3"><?php echo  $etudiant->parent ;?></td>
+                          <td class="col-1"><?php echo  $etudiant->adresse ;?></td>
+                          <td class="col-1"><?php echo  $etudiant->date_de_naissance ;?></td>
+                          <td class="col-2"><?php echo  $etudiant->email ;?></td>
+                          <th class="col-1 nav-item dropdown">
+                            <p href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="bi bi-three-dots-vertical"></i>
+                            </p>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">Edite</a></li>
+                              <li><a class="dropdown-item" href="#">Delete</a></li>
+                            </ul>
+                          </th>
+                        </tr>
+                    <?php endforeach ;?>
                   </tbody>
                 </table>
               </div>

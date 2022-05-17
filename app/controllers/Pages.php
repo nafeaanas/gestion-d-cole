@@ -7,5 +7,4 @@
     public function index(){
       $this->view('index');
     }
-
   }

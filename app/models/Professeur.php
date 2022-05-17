@@ -1,6 +1,5 @@
 <?php
 
-
 class Professeur  {
 
     private $db;
