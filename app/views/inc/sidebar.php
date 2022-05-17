@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='index.php') echo'active'; ?>" href="index.php">
+          <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='index.php') echo'active'; ?>" href="<?php echo URLROOT; ?>/index">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -30,7 +30,7 @@
           </a>
             <ul class="navbar-nav collapse" id="collapseExample" style="width: 80%; margin-left: 10%;">
               <li class="nav-item">
-                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='professeurs.php') echo'active'; ?>" href="professeurs.php">
+                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='professeurs.php') echo'active'; ?>" href="<?php echo URLROOT; ?>/professeurs">
                   <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="ni ni-calendar-grid-58 text-secondary text-sm opacity-10"></i>
                   </div>
@@ -39,7 +39,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='etudiants.php') echo'active'; ?>" href="etudiants.php">
+                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='etudiants.php') echo'active'; ?>" href="<?php echo URLROOT; ?>/etudiants">
                   <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="ni ni-calendar-grid-58 text-secondary text-sm opacity-10"></i>
                   </div>
@@ -47,7 +47,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='parents.php') echo'active'; ?>" href="parents.php">
+                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='parents.php') echo'active'; ?>" href="<?php echo URLROOT; ?>/parents">
                   <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="ni ni-calendar-grid-58 text-secondary text-sm opacity-10"></i>
                   </div>
@@ -55,7 +55,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='administrateurs.php') echo'active'; ?>" href="administrateurs.php">
+                <a class="nav-link <?php if(basename($_SERVER['REQUEST_URI'])=='administrateurs.php') echo'active'; ?>" href="<?php echo URLROOT; ?>/administrateurs">
                   <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="ni ni-calendar-grid-58 text-secondary text-sm opacity-10"></i>
                   </div>

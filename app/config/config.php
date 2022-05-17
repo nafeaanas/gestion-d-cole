@@ -8,7 +8,7 @@
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/gestion_ecole');
+  define('URLROOT', 'http://localhost/gestion-d-cole');
   // Site Name
   define('SITENAME', 'Emmizy MVC Frame');
   // App Version

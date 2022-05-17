@@ -5,7 +5,7 @@ class Parents extends Controller{
 
     public function __construct()
     {
-        $this->parenttModel = $this->model('Pareent');
+        $this->parenttModel = $this->model('Pare');
     }
 
     
