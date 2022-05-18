@@ -16,8 +16,9 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>étudiants</h6>
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h1 class="text-uppercase text-sm">étudiants</h1>
+              <button type="button" class="btn btn-primary">Add</button>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
             <div class="table-responsive p-0 overflow-hidden">
