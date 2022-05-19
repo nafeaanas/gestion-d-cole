@@ -1,7 +1,6 @@
+<?php
 
-<?php 
-
-class Pare {
+class Administrateur {
 
     private $db;
     public function __construct()
@@ -9,19 +8,18 @@ class Pare {
         $this->db = new Database;
     }
 
-    public function getParents(){
-        $this->db->query('SELECT * FROM `parent`');
+    public function getAdministrateurs(){
+        $this->db->query('SELECT * FROM `administrateur`');
         $result = $this->db->resultSet();
         return $result;
     }
 
-
-    // Statistique des parents
-    public function nombreParent(){
-        $this->db->query('SELECT * FROM `parent`');
+    // Statistique des étudiants
+    public function nombreAdministrateur(){
+        $this->db->query('SELECT * FROM `administrateur`');
         $result = $this->db->resultSet();
         $result = $this->db->rowCount();
         return $result;
     }
-
+    
 }

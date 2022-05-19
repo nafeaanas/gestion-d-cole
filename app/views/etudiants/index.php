@@ -18,21 +18,22 @@
           <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
               <h1 class="text-uppercase text-sm">étudiants</h1>
-              <button type="button" class="btn btn-primary">Add</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
+              <?php require APPROOT . '/views/inc_models/x.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
-            <div class="table-responsive p-0 overflow-hidden">
-                <table class="table align-items-center justify-content-center mb-0">
+              <div class="table-responsive p-0 overflow-hidden">
+                <table class="table align-items-center justify-content-center mb-0 text-center">
                   <thead>
                     <tr>
                       <th class="col-2 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Usermane</th>
                       <th class="col-1 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Genre</th>
                       <th class="col-1 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Class</th>
                       <th class="col-1 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Parents</th>
-                      <th class="col-3 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Adresse</th>
+                      <th class="col-2 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Adresse</th>
                       <th class="col-1 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Date de naissance</th>
                       <th class="col-2 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Email</th>
-                      <th class="col-1"></th>
+                      <th class="col-2"></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -41,11 +42,11 @@
                           <td class="col-2"><?php echo  $etudiant->nom_complet ;?></td>
                           <td class="col-1"><?php echo  $etudiant->genre ;?></td>
                           <td class="col-1"><?php echo  $etudiant->class ;?></td>
-                          <td class="col-3"><?php echo  $etudiant->parent ;?></td>
+                          <td class="col-2"><?php echo  $etudiant->parent ;?></td>
                           <td class="col-1"><?php echo  $etudiant->adresse ;?></td>
                           <td class="col-1"><?php echo  $etudiant->date_de_naissance ;?></td>
                           <td class="col-2"><?php echo  $etudiant->email ;?></td>
-                          <th class="col-1 nav-item dropdown">
+                          <th class="col-2 nav-item dropdown">
                             <p href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               <i class="bi bi-three-dots-vertical"></i>
                             </p>

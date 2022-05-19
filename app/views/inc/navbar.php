@@ -5,10 +5,10 @@
         <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-white active" aria-current="page">
-                <?php if(basename($_SERVER['REQUEST_URI'])=='index.php') echo'Dashboard'; elseif(basename($_SERVER['REQUEST_URI'])=='profile.php') echo'Profile'; else echo 'Table'; ?>
+                <?php if($_SERVER['REQUEST_URI']=='/gestion-d-cole/index') echo'Dashboard'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/profiles') echo'Profile'; else echo 'Table'; ?>
             </li>
         </ol>
-        <h6 class="font-weight-bolder text-white mb-0"><?php if(basename($_SERVER['REQUEST_URI'])=='index.php') echo'Dashboard'; elseif(basename($_SERVER['REQUEST_URI'])=='profile.php') echo'Profile'; elseif(basename($_SERVER['REQUEST_URI'])=='professeurs.php') echo'Professeurs'; elseif(basename($_SERVER['REQUEST_URI'])=='parents.php') echo'Parents'; elseif(basename($_SERVER['REQUEST_URI'])=='etudiants.php') echo'Etudiants'; elseif(basename($_SERVER['REQUEST_URI'])=='administrateurs.php') echo'Administrateurs'; ?></h6>
+        <h6 class="font-weight-bolder text-white mb-0"><?php if($_SERVER['REQUEST_URI']=='/gestion-d-cole/index') echo'Dashboard'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/profiles') echo'Profile'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/Professeurs') echo'Professeurs'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/parents') echo'Parents'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/etudiants') echo'Etudiants'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/administrateurs') echo'Administrateurs'; ?></h6>
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
         <ul class="navbar-nav justify-content-end">

@@ -1,24 +1,25 @@
 <?php
 
 
-class Etudiants extends Controller{
+class Administrateurs extends Controller{
 
     public function __construct()
     {
-        $this->etudiantModel = $this->model('Etudiant');
+        $this->administrateurModel = $this->model('Administrateur');
     }
 
     
     public function index(){
-        $etudiants = $this->etudiantModel->getEtudiants();
 
+        $administrateurs = $this->administrateurModel->getAdministrateurs();
         $data = [
-            'etudiants' => $etudiants,
+            'administrateurs' => $administrateurs
         ];
-        $this->view('etudiants/index', $data);
+
+        $this->view('administrateurs/index', $data);
     }
 
-   
+
     public function add(){
 
     }
