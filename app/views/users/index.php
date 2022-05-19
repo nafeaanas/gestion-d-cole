@@ -13,18 +13,18 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" method="POST" action="<?php echo URLROOT ;?>/users/login">
+                  <form method="POST" action="<?php echo URLROOT ;?>/users/login" data-parsley-validate>
                     <div class="mb-3">
-                      <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
-                      <span class="invalid-feedback"><?php echo $data['email_err'] ;?> </span>
+                      <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required data-parsley-type="email">
+                      <span class="invalid-feedback"><?php //echo $data['email_err'] ;?> </span>
                     </div>
                     <div class="mb-3">
-                      <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
-                      <span class="invalid-feedback"><?php echo $data['password_err'] ;?> </span>
+                      <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" required data-parsley-minlength="3">
+                      <span class="invalid-feedback"><?php //echo $data['password_err'] ;?> </span>
                     </div>
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">Remember me</label>
+                      <input class="form-check-input" name="remembere" type="checkbox" id="rememberme">
+                      <label class="form-check-label" for="rememberme">Remember me</label>
                     </div>
                     <div class="text-center">
                       <input type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0" value="Login">
@@ -46,5 +46,11 @@
     </section>
   </main>
 
-</body>
-</html>
+  <?php require APPROOT . '/views/inc_home/footer.php'; ?>
+
+  <style>
+    .parsley-errors-list{
+        color: red;
+        list-style: none;
+    }
+  </style>

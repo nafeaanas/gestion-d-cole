@@ -12,5 +12,6 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="<?php echo URLROOT; ?>/css/nucleo-svg.css" rel="stylesheet"/>
   <link id="pagestyle" href="<?php echo URLROOT; ?>/css/argon-dashboard.css?v=2.0.2" rel="stylesheet"/>
+  <link href="<?php echo URLROOT; ?>/js/parsley.min.js" rel="stylesheet"/>
   <title>Gestion d'ecole</title>
 </head>
