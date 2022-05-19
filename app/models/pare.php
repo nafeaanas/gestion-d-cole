@@ -15,7 +15,6 @@ class Pare {
         return $result;
     }
 
-
     // Statistique des parents
     public function nombreParent(){
         $this->db->query('SELECT * FROM `parent`');
