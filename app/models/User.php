@@ -11,7 +11,6 @@ class User {
         $this->db->query('SELECT * FROM `administrateur`');
         $result = $this->db->resultSet();
         return $result;
-
     }
 
     //register new user

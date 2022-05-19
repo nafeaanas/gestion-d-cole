@@ -19,7 +19,7 @@ class Users extends Controller{
     }
 
     public function register(){
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        /*if ($_SERVER['REQUEST_METHOD'] == 'POST'){
            // process form
            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
             $data = [
@@ -75,7 +75,7 @@ class Users extends Controller{
             ];
             //load view
             $this->view('users/register', $data);          
-        }
+        }*/
     }
 
     public function login(){
@@ -100,7 +100,7 @@ class Users extends Controller{
                 }
             }
 
-            //validate password 
+            //validate password
             if(empty($data['password'])){
                 $data['password_err'] = 'Please enter your password';
             }elseif(strlen($data['password']) < 6){
@@ -115,10 +115,10 @@ class Users extends Controller{
                     $this->createUserSession($loggedInUser);
                 }else{
                     $data['password_err'] = 'Password incorrect';
-                    $this->view('users/login', $data);
+                    $this->view('users/index', $data);
                 }
             }else{
-                $this->view('users/login', $data);
+                $this->view('users/index', $data);
             }
 
         }else{
@@ -130,7 +130,7 @@ class Users extends Controller{
                 'password_err' => ''
             ];
             //load view
-            $this->view('users/login', $data);          
+            $this->view('users/index', $data);          
         }
     }
 
@@ -139,7 +139,7 @@ class Users extends Controller{
         $_SESSION['user_id'] = $user->id;
         $_SESSION['name'] = $user->name;
         $_SESSION['email'] = $user->email;
-        redirect('posts/index');
+        redirect('index');
     }
 
     //logout and destroy user session
@@ -148,6 +148,6 @@ class Users extends Controller{
         unset($_SESSION['name']);
         unset($_SESSION['email']);
         session_destroy();
-        redirect('users/login');
+        redirect('users/index');
     }
 }

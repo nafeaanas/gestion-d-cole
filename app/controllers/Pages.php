@@ -33,6 +33,7 @@
             'femaleprofesseur' => $femaleprofesseur,
             'rowparents' => $rowparents
         ];
-         $this->view('index', $data);
+        $this->view('index', $data);
+        
     }
   }

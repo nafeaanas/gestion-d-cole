@@ -19,7 +19,7 @@
             <div class="card-header d-flex justify-content-between align-items-center">
               <h1 class="text-uppercase text-sm">étudiants</h1>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
-              <?php require APPROOT . '/views/inc_models/x.php'; ?>
+              <?php require APPROOT . '/views/inc_models/crdetudiant.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
               <div class="table-responsive p-0 overflow-hidden">
