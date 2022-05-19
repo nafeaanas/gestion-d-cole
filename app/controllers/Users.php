@@ -53,8 +53,6 @@ class Users extends Controller{
                 $data['password_err'] = 'Password must be atleast six characters';
             }
 
-
-
             //make sure error are empty
             if(empty($data['name_err']) && empty($data['email_err']) && empty($data['password_err'])){
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);

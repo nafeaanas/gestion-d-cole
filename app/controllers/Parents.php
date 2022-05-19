@@ -13,7 +13,7 @@ class Parents extends Controller{
 
         $Parent = $this->parenttModel->getParents();
         $data = [
-            'Parent' => $Parent
+            'Parents' => $Parent
         ];
 
         $this->view('Parents/index', $data);

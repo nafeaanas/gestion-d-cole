@@ -19,7 +19,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">nombre des <br> administrateurs</p>
-                    <h5 class="font-weight-bolder">0</h5>
+                    <h5 class="font-weight-bolder"><?php echo $data['rowadministrateurs'] ?></h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -39,7 +39,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">nombre des <br> étudiant</p>
-                    <h5 class="font-weight-bolder">0</h5>
+                    <h5 class="font-weight-bolder"><?php echo $data['rowetudiants'] ?></h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -59,7 +59,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">nombre des <br> professeurs</p>
-                    <h5 class="font-weight-bolder">0</h5>
+                    <h5 class="font-weight-bolder"><?php echo $data['rowprofesseurs'] ?></h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -79,7 +79,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">nombre des <br> parents</p>
-                    <h5 class="font-weight-bolder">0</h5>
+                    <h5 class="font-weight-bolder"><?php echo $data['rowparents'] ?></h5>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -108,11 +108,8 @@
                     </div>
                     <div class="d-flex flex-column">
                       <h6 class="mb-1 text-sm" style="color: #1181F0;">Masculin</h6>
-                      <span class="text-xs">0 étudiant, <span class="font-weight-bold">0 professeurs</span></span>
+                      <span class="text-xs"><?php echo $data['maleetudiant'] ?> étudiant, <span class="font-weight-bold"><?php echo $data['maleprofesseur'] ?> professeurs</span></span>
                     </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
                   </div>
                 </li>
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
@@ -122,11 +119,8 @@
                     </div>
                     <div class="d-flex flex-column">
                       <h6 class="mb-1 text-sm" style="color: #E95098;">Féminin</h6>
-                      <span class="text-xs">0 étudiant, <span class="font-weight-bold">0 professeurs</span></span>
+                      <span class="text-xs"><?php echo $data['femaleetudiant'] ?> étudiant, <span class="font-weight-bold"><?php echo $data['femaleprofesseur'] ?> professeurs</span></span>
                     </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
                   </div>
                 </li>
               </ul>
@@ -155,9 +149,9 @@
                 </div>
               </div>
               <div class="position-absolute bottom-0 w-100 mx-3 d-flex align-items-end gap-3 text-center text-dark">
-                <div class="rounded-top bg-success text-uppercase font-weight-bolder" style="width: 50px; height: 60px;">60</div>
-                <div class="rounded-top bg-info text-uppercase font-weight-bolder" style="width: 50px; height: 20px;">20</div>
-                <div class="rounded-top bg-danger text-uppercase font-weight-bolder" style="width: 50px; height: 80px;">80</div>
+                <div class="rounded-top bg-success text-uppercase font-weight-bolder" style="width: 50px; height: <?php echo $data['cless1etudiant'] ?>0px;"><?php echo $data['cless1etudiant'] ?></div>
+                <div class="rounded-top bg-info text-uppercase font-weight-bolder" style="width: 50px; height: <?php echo $data['cless2etudiant'] ?>0px;"><?php echo $data['cless2etudiant'] ?></div>
+                <div class="rounded-top bg-danger text-uppercase font-weight-bolder" style="width: 50px; height: <?php echo $data['cless3etudiant'] ?>0px;"><?php echo $data['cless3etudiant'] ?></div>
             </div>
           </div>
         </div>
