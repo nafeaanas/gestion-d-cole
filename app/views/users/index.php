@@ -11,16 +11,15 @@
                 <div class="card-header text-start">
                   <h4 class="font-weight-bolder">Sign In</h4>
                   <p class="mb-0">Enter your email and password to sign in</p>
+                  <span class="text-danger"><?php if(isset($data['error'])){ echo $data['error'] ;} ?> </span>
                 </div>
                 <div class="card-body">
                   <form method="POST" action="<?php echo URLROOT ;?>/users/login" data-parsley-validate>
                     <div class="mb-3">
                       <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required data-parsley-type="email">
-                      <span class="invalid-feedback"><?php //echo $data['email_err'] ;?> </span>
                     </div>
                     <div class="mb-3">
                       <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" required data-parsley-minlength="3">
-                      <span class="invalid-feedback"><?php //echo $data['password_err'] ;?> </span>
                     </div>
                     <div class="form-check form-switch">
                       <input class="form-check-input" name="remembere" type="checkbox" id="rememberme">
