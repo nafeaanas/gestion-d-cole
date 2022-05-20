@@ -7,28 +7,28 @@ class User {
     }
 
     public function getUser(){
-
         $this->db->query('SELECT * FROM `administrateur`');
         $result = $this->db->resultSet();
         return $result;
     }
 
     //register new user
-    public function register($data){
-        $this->db->query('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)');
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':password', $data['password']);
+    // public function register($data){
+    //     $this->db->query('INSERT INTO user (name, email, password) VALUES (:name, :email, :password)');
+    //     $this->db->bind(':name', $data['name']);
+    //     $this->db->bind(':email', $data['email']);
+    //     $this->db->bind(':password', $data['password']);
 
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    //find user by email
-    public function findUserByEmail($email){
-        $this->db->query('SELECT * FROM user WHERE email = :email');
+    //     if($this->db->execute()){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+
+    // find user by email
+    public function findUserById($id){
+        $this->db->query('SELECT * FROM `administrateur` WHERE email = :email');
         $this->db->bind(':email', $email);
 
         $row = $this->db->single();
@@ -41,27 +41,35 @@ class User {
         }
     }
 
+    // Login
     public function login($email, $password){
-        $this->db->query('SELECT * FROM user where email = :email');
+        $this->db->query('SELECT * FROM `administrateur` where email = :email AND password = :password');
         $this->db->bind(':email', $email);
-       
+        $this->db->bind(':password', $password);
         $row = $this->db->single();
-
-        $hash_password = $row->password;
-
-        if(password_verify($password, $hash_password)){
+        if($row){
             return $row;
         }else{
             return false;
         }
     }
 
-    public function getUserById($id){
-        $this->db->query('SELECT * FROM user WHERE id = :id');
+    // Edite
+    public function edite($id,$name,$prenom,$email,$role) {
+        $this->db->query("UPDATE `administrateur` SET `nom`=:nom , `prenom`=:prenom , `email`=:email , `role`=:role WHERE `administrateur`.`id`=:id");
         $this->db->bind(':id', $id);
-
-        $row = $this->db->single();
-
-        return $row;
+        $this->db->bind(':nom', $name);
+        $this->db->bind(':prenom', $prenom);
+        $this->db->bind(':email', $email);
+        $this->db->bind(':role', $role);
+        $this->db->execute();
+        
     }
+
+    // public function getUserById($id){
+    //     $this->db->query('SELECT * FROM `administrateur` WHERE id = :id');
+    //     $this->db->bind(':id', $id);
+    //     $row = $this->db->single();
+    //     return $row;
+    // }
 }

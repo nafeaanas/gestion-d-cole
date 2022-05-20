@@ -26,10 +26,8 @@
             </div>
             <div class="card-body pt-0">
               <div class="text-center mt-4">
-                <h5>Username<span class="font-weight-light">, Age</span></h5>
-                <h6 class="font-weight-300">Country, City</h6>
-                <h6 class="mt-4">Rôle</h6>
-                <span class="font-weight-light">Address de l'école</span>
+                <h5><?php echo $_SESSION['name']." ".$_SESSION['prenom'] ?></h5>
+                <h6 class="mt-4"><?php echo $_SESSION['role'] ?></h6>
               </div>
             </div>
           </div>
@@ -40,76 +38,45 @@
           <div class="card">
             <p class="card-header pb-0">Edit Profile</p>
             <div class="card-body">
-              <form>
+              <form method="POST" action="<?php echo URLROOT ;?>/users/edite" data-parsley-validate>
                 <div class="d-flex justify-content-between align-items-center">
                   <p class="text-uppercase text-sm">User Information</p>
-                  <button type="button" class="btn btn-primary">Sauvegarder</button>
+                  <button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </div>
+                <p class="text-danger text-center"><?php if(isset($data['error'])){ echo $data['error'] ;} ?> </p>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">Prénom</label>
-                      <input class="form-control" type="text" value="">
+                      <input class="form-control" name="prenom" type="text" value="<?php echo $_SESSION['prenom'] ?>" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">Nom</label>
-                      <input class="form-control" type="text" value="">
+                      <input class="form-control" name="name" type="text" value="<?php echo $_SESSION['name'] ?>" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="example-text-input" class="form-control-label">Email address</label>
-                      <input class="form-control" type="email" value="">
+                      <input class="form-control" name="email" type="email" value="<?php echo $_SESSION['email'] ?>" required data-parsley-type="email">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Matricule</label>
-                      <input class="form-control" type="text" value="">
+                      <label for="example-text-input" class="form-control-label">Rôle</label required>
+                      <select class="form-select" name="role">
+                        <option value="formateur" <?php if($_SESSION['role']=='formateur') echo 'selected'; ?>>Formateur</option>
+                        <option value="administrateur" <?php if($_SESSION['role']=='administrateur') echo 'selected'; ?>>Administrateur</option>
+                        <option value="autre" <?php if($_SESSION['role']=='autre') echo 'selected'; ?>>Autre...</option>
+                      </select>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Rôle</label>
-                      <input class="form-control" type="text" value="">
-                    </div>
+                  <div class="form-group col-md-6 mx-auto text-center mt-4">
+                    <label for="example-text-input" class="form-control-label">Password</label>
+                    <input class="form-control" name="password" type="password" required>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="example-text-input" class="form-control-label">Date de naissance</label>
-                      <input class="form-control" type="date" value="">
-                    </div>
-                  </div>
-                </div>
-              </form>
-              
-              <hr class="horizontal dark my-4">
-              <form>
-                <div class="d-flex justify-content-between align-items-center">
-                  <p class="text-uppercase text-sm">Contact Information</p>
-                  <button type="button" class="btn btn-primary">Sauvegarder</button>
-                </div>
-                <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Address de l'école</label>
-                    <input class="form-control" type="text" value="">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">City</label>
-                    <input class="form-control" type="text" value="">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Country</label>
-                    <input class="form-control" type="text" value="">
-                  </div>
-                </div>
                 </div>
               </form>
             </div>
@@ -120,3 +87,10 @@
   </div>
   
   <?php require APPROOT . '/views/inc/footer.php'; ?>
+
+  <style>
+    .parsley-errors-list{
+        color: red;
+        list-style: none;
+    }
+  </style>

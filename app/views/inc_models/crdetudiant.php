@@ -7,7 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="<?php echo URLROOT ;?>/users/login" data-parsley-validate>
+        <form method="POST" data-parsley-validate>
           <div class="modal-body d-flex gap-3">
             <input class="form-control w-50" type="text" placeholder="Usermane" required data-parsley-minlength="3">
             <select class="form-select w-25" required>
