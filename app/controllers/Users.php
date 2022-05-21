@@ -3,23 +3,25 @@
 
 class Users extends Controller{
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->userModel = $this->model('User');
     }
 
-    public function index(){
-
+    public function index() {
         $User = $this->userModel->getUser();
         $data = [
             'Users' => $User
         ];
 
-        $this->view('users/index', $data);
+        if(isset($_SESSION['email'])){
+            redirect('users/index');
+        }else{
+            $this->view('users/index', $data);   
+        }
     }
 
 
-    public function login(){
+    public function login() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
             $data = [
@@ -85,17 +87,16 @@ class Users extends Controller{
     }
 
     //setting user section variable
-    public function createUserSession($user){
+    public function createUserSession($user) {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['name'] = $user->nom;
         $_SESSION['prenom'] = $user->prenom;
         $_SESSION['role'] = $user->role;
         $_SESSION['email'] = $user->email;
-        // redirect('index');
     }
 
     //logout and destroy user session
-    public function logout(){
+    public function logout() {
         unset($_SESSION['user_id']);
         unset($_SESSION['name']);
         unset($_SESSION['email']);

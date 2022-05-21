@@ -3,20 +3,21 @@
 
 class Parents extends Controller{
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->parenttModel = $this->model('Pare');
     }
 
     
-    public function index(){
-
+    public function index() {
         $Parent = $this->parenttModel->getParents();
         $data = [
             'Parents' => $Parent
         ];
-
-        $this->view('Parents/index', $data);
+        if(isset($_SESSION['email'])){
+            $this->view('Parents/index', $data);
+        }else{
+            redirect('users/index');
+        }
     }
 
 

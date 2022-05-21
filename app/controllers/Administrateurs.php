@@ -3,20 +3,21 @@
 
 class Administrateurs extends Controller{
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->administrateurModel = $this->model('Administrateur');
     }
 
     
-    public function index(){
-
+    public function index() {
         $administrateurs = $this->administrateurModel->getAdministrateurs();
         $data = [
             'administrateurs' => $administrateurs
         ];
-
-        $this->view('administrateurs/index', $data);
+        if(isset($_SESSION['email'])){
+            $this->view('administrateurs/index', $data);
+        }else{
+            redirect('users/index');
+        }
     }
 
 
