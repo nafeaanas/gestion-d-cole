@@ -1,4 +1,5 @@
 <?php
+
   class Pages extends Controller {
     public function __construct(){
       $this->administrateurModel = $this->model('Administrateur');
@@ -33,7 +34,11 @@
             'femaleprofesseur' => $femaleprofesseur,
             'rowparents' => $rowparents
         ];
-        $this->view('index', $data);
-        
+
+        if(isset($_SESSION['email'])){
+          $this->view('index', $data);
+        }else{
+            redirect('users/index');
+        }        
     }
   }

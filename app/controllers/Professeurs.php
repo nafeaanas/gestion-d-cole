@@ -4,20 +4,21 @@
 
 class Professeurs extends Controller {
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->ProfesseurModel = $this->model('Professeur');
     }
 
     
-    public function index(){
-
+    public function index() {
         $Professeur = $this->ProfesseurModel->getProfesseurs();
         $data = [
             'Professeurs' => $Professeur 
         ];
-
-        $this->view('Professeur/index', $data);
+        if(isset($_SESSION['email'])){
+            $this->view('Professeur/index', $data);
+        }else{
+            redirect('users/index');
+        }
     }
 
 
