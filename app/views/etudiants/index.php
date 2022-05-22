@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<body class="g-sidenav-show bg-gray-100">
+<body class="g-sidenav-show bg-gray-100 overflow-hidden">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
   <!-- Assidbar -->
 
@@ -15,15 +15,15 @@
       <!-- tale étudiants -->
       <div class="row">
         <div class="col-12">
-          <div class="card mb-4">
+          <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
               <h1 class="text-uppercase text-sm">étudiants</h1>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
               <?php require APPROOT . '/views/inc_models/crdetudiant.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
-              <div class="table-responsive p-0 overflow-hidden">
-                <table class="table align-items-center justify-content-center mb-0 text-center">
+              <div class="table-responsive p-0" style="height:480px;">
+                <table class="table align-items-center justify-content-center mb-0 text-center" >
                   <thead>
                     <tr>
                       <th class="col-2 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Usermane</th>
@@ -47,15 +47,12 @@
                           <td class="col-1"><?php echo  $etudiant->date_de_naissance ;?></td>
                           <td class="col-2"><?php echo  $etudiant->email ;?></td>
                           <th class="col-2 nav-item dropdown">
-                            <p href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="bi bi-three-dots-vertical"></i>
-                            </p>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <i class="bi bi-three-dots-vertical" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width:40px;">
                               <li><a class="dropdown-item" href="#">Edite</a></li>
                               <li><a class="dropdown-item" href="#">Delete</a></li>
                             </ul>
                           </th>
-                        </tr>
                     <?php endforeach ;?>
                   </tbody>
                 </table>
@@ -68,3 +65,13 @@
   </main>
 
   <?php require APPROOT . '/views/inc/footer.php'; ?>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1673CF; 
+      border-radius: 25px;
+    }
+  </style>
