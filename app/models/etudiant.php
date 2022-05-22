@@ -55,5 +55,17 @@ class Etudiant {
             return false;
         }
     }
+
+    // Delete étudiant
+    public function delete($data){
+        $this->db->query('DELETE FROM etudiant WHERE id = :id');
+        $this->db->bind(':id', $data['id']);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
 }
