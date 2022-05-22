@@ -22,7 +22,7 @@
               <?php require APPROOT . '/views/inc_models/crdetudiant.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
-              <div class="table-responsive p-0" style="height:480px;">
+              <div class="table-responsive p-0" style="max-height: 480px; overflow-x: hidden;">
                 <table class="table align-items-center justify-content-center mb-0 text-center" >
                   <thead>
                     <tr>
@@ -38,19 +38,20 @@
                   </thead>
                   <tbody>
                     <?php foreach ($data['etudiants'] as $etudiant) : ?>
-                        <tr>
-                          <td class="col-2"><?php echo  $etudiant->nom_complet ;?></td>
-                          <td class="col-1"><?php echo  $etudiant->genre ;?></td>
-                          <td class="col-1"><?php echo  $etudiant->class ;?></td>
-                          <td class="col-2"><?php echo  $etudiant->parent ;?></td>
-                          <td class="col-1"><?php echo  $etudiant->adresse ;?></td>
-                          <td class="col-1"><?php echo  $etudiant->date_de_naissance ;?></td>
-                          <td class="col-2"><?php echo  $etudiant->email ;?></td>
+                        <tr id="row">
+                          <td class="d-none id"><?php echo  $etudiant->id ;?></td>
+                          <td class="col-2 username"><?php echo  $etudiant->nom_complet ;?></td>
+                          <td class="col-1 genre"><?php echo  $etudiant->genre ;?></td>
+                          <td class="col-1 class"><?php echo  $etudiant->class ;?></td>
+                          <td class="col-2 parent"><?php echo  $etudiant->parent ;?></td>
+                          <td class="col-1 adresse"><?php echo  $etudiant->adresse ;?></td>
+                          <td class="col-1 date_de_naissance"><?php echo  $etudiant->date_de_naissance ;?></td>
+                          <td class="col-2 email"><?php echo  $etudiant->email ;?></td>
                           <th class="col-2 nav-item dropdown">
                             <i class="bi bi-three-dots-vertical" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width:40px;">
-                              <li><a class="dropdown-item" href="#">Edite</a></li>
-                              <li><a class="dropdown-item" href="#">Delete</a></li>
+                              <li><a class="dropdown-item" id="edite" data-bs-toggle="modal" data-bs-target="#editModal">Edite</a></li>
+                              <li><a class="dropdown-item" href="<?php echo URLROOT ;?>/Etudiants/delete?etudiant=<?php echo  $etudiant->id ;?>">Delete</a></li>
                             </ul>
                           </th>
                     <?php endforeach ;?>
@@ -66,12 +67,28 @@
 
   <?php require APPROOT . '/views/inc/footer.php'; ?>
 
-  <style>
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1673CF; 
-      border-radius: 25px;
-    }
-  </style>
+  <script>
+    document.querySelectorAll('#edite').forEach(function(btn){
+      btn.addEventListener('click',function(event){
+        let suport = event.target.closest('#row');
+
+        let id = suport.querySelector('.id').textContent;
+        let username = suport.querySelector('.username').textContent;
+        let genre = suport.querySelector('.genre').textContent;
+        let class = suport.querySelector('.class').textContent;
+        let parent = suport.querySelector('.parent').textContent;
+        let adresse = suport.querySelector('.adresse').textContent;
+        let date_de_naissance = suport.querySelector('.date_de_naissance').textContent;
+        let email = suport.querySelector('.email').textContent;
+
+        document.querySelector('#editModal .id').value = id;
+        document.querySelector('#editModal .username').value = "ok";
+        document.querySelector('#editModal .genre').value = genre;
+        document.querySelector('#editModal .class').value = class;
+        document.querySelector('#editModal .parent').value = parent;
+        document.querySelector('#editModal .adresse').value = adresse;
+        document.querySelector('#editModal .date_de_naissance').value = date_de_naissance;
+        document.querySelector('#editModal .email').value = email;
+      })
+    })
+  </script>

@@ -18,3 +18,13 @@
 
 </body>
 </html>
+
+<style>
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #4285F4; 
+      border-radius: 25px;
+    }
+  </style>
