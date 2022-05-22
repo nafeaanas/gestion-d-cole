@@ -12,7 +12,7 @@
     <div class="container-fluid py-4">
       <div class="row">
         <!-- Profile -->
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <div class="card card-profile">
             <img src="<?php echo URLROOT; ?>/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top">
             <div class="row justify-content-center">

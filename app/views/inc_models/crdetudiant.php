@@ -4,6 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Ajout Etudaint</h5>
+        <p class="text-danger text-center"><?php if(isset($data['error'])){ echo $data['error'] ;} ?> </p>
       </div>
       <form method="POST" action="<?php echo URLROOT ;?>/Etudiants/add" data-parsley-validate>
         <div class="modal-body">
@@ -14,8 +15,8 @@
             <div class="w-25">
               <select class="form-select" name="genre" required>
                 <option>Genre</option>
-                <option>Male</option>
-                <option>Female</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
               </select>
             </div>
           </div>
@@ -26,9 +27,9 @@
             <div class="w-25">
               <select class="form-select" name="class" required>
                 <option>Chose Your Class</option>
-                <option>Class 1</option>
-                <option>Class 2</option>
-                <option>Class 3</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
               </select>
             </div>
           </div>
