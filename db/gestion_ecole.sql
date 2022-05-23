@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 19 mai 2022 à 12:47
+-- Généré le : mar. 24 mai 2022 à 00:09
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.1
 
@@ -41,7 +41,10 @@ CREATE TABLE `administrateur` (
 --
 
 INSERT INTO `administrateur` (`id`, `nom`, `prenom`, `role`, `password`, `email`) VALUES
-(1, 'ahmed', 'ahmed', 'formateur', '111111', 'ahmed@gmail.com');
+(1, 'ahmed', 'Ahmed', 'formateur', '111', 'ahmed@gmail.com'),
+(2, 'morad', 'Morad', 'administrateur', '1234', 'morad@gmail.com'),
+(3, 'admin', 'admin', 'etudiant', 'admin', 'admin@gmail.com'),
+(4, 'admin2', 'admin', 'etudiant', 'admin', 'admin2@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -65,9 +68,16 @@ CREATE TABLE `etudiant` (
 --
 
 INSERT INTO `etudiant` (`id`, `nom_complet`, `genre`, `class`, `parent`, `adresse`, `date_de_naissance`, `email`) VALUES
-(1, 'anas jaballah', 'male', 1, 'aaaaa', 'anncnknk', '2022-05-03', 'anas@gmail.com'),
+(1, 'anas jaballah', 'male', 1, 'zzzz', 'anncnknk', '2022-05-03', 'anas@gmail.com'),
 (2, 'amin', 'female', 3, 'hsldqls', 'KJSDKSDKSDHKDCKHK', '2022-05-03', 'adam@gmail.com'),
-(3, 'zakaria', 'male', 3, 'Mohammed', 'hhskdhlkd jdksh', '2022-05-03', 'zakaria@gmail.com');
+(3, 'zakaria', 'male', 3, 'Mohammed', 'hhskdhlkd jdksh', '2022-05-03', 'zakaria@gmail.com'),
+(4, 'admin', 'male', 3, 'xyz', 'adress', '2022-05-21', 'admin@gmail.com'),
+(5, 'etudiant', 'female', 2, 'Etudiant', 'HJLK ioyo yoi hlkK LHoillk', '9877-06-05', 'etudiant@gmail.com'),
+(8, 'test', 'male', 2, 'text', 'hqslksd  qd', '2018-12-29', 'test@gmail.com'),
+(11, 'test1', 'female', 1, 'test1', 'jhldjlqsjdl', '2022-01-01', 'test1@gmail.com'),
+(12, 'test3', 'female', 3, 'aaaa', 'djqsl', '2020-10-29', 'kerkazou.zakaria@gmail.com'),
+(19, 'Zwaks zakaria', 'male', 3, 'djsdl', 'dfsd', '2022-12-30', 'zakaria@gmail.com'),
+(20, 'zwaks', 'male', 1, 'xyz', 'sdhqlkdj', '2022-04-28', 'zakariaana32@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -81,7 +91,7 @@ CREATE TABLE `parent` (
   `genre` varchar(255) NOT NULL,
   `job` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
-  `phone` int(10) NOT NULL
+  `phone` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='parent';
 
 --
@@ -89,7 +99,8 @@ CREATE TABLE `parent` (
 --
 
 INSERT INTO `parent` (`id`, `nom_complet`, `genre`, `job`, `adresse`, `phone`) VALUES
-(1, 'anas jaballah', 'anas', 'anas', 'anas', 9876543);
+(2, 'kerkazou', 'male', 'job', 'JKHkhlkh', '0622766915'),
+(3, 'anas jaballah', 'male', 'job', 'jflks', '0611111111');
 
 -- --------------------------------------------------------
 
@@ -103,7 +114,7 @@ CREATE TABLE `professeur` (
   `genre` varchar(255) NOT NULL,
   `class` int(11) NOT NULL,
   `matiere` varchar(255) NOT NULL,
-  `phone` int(10) NOT NULL
+  `phone` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='professeur';
 
 --
@@ -111,7 +122,12 @@ CREATE TABLE `professeur` (
 --
 
 INSERT INTO `professeur` (`id`, `nom_complet`, `genre`, `class`, `matiere`, `phone`) VALUES
-(1, 'ahmed ahmed', 'male', 3, 'PHP', 600000000);
+(2, 'Youssef', 'male', 1, 'PHP JS', '0611111111'),
+(3, 'imane', 'female', 2, 'JS PHP ...', '0622222222'),
+(4, 'ezrze', 'female', 1, 'PHP JS', '0622766915'),
+(5, 'test', 'male', 1, 'testing', '0600000000'),
+(6, 'test1', 'female', 3, 'JS PHP ...', '0102030040'),
+(7, 'test test', 'male', 2, 'testing', '0644444444');
 
 --
 -- Index pour les tables déchargées
@@ -149,25 +165,25 @@ ALTER TABLE `professeur`
 -- AUTO_INCREMENT pour la table `administrateur`
 --
 ALTER TABLE `administrateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `etudiant`
 --
 ALTER TABLE `etudiant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `parent`
 --
 ALTER TABLE `parent`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `professeur`
 --
 ALTER TABLE `professeur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
