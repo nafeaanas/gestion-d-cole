@@ -49,13 +49,5 @@ class User {
         $this->db->bind(':email', $email);
         $this->db->bind(':role', $role);
         $this->db->execute();
-        
     }
-
-    // public function getUserById($id){
-    //     $this->db->query('SELECT * FROM `administrateur` WHERE id = :id');
-    //     $this->db->bind(':id', $id);
-    //     $row = $this->db->single();
-    //     return $row;
-    // }
 }

@@ -13,10 +13,10 @@ class Administrateurs extends Controller{
         $data = [
             'administrateurs' => $administrateurs
         ];
-        if(isset($_SESSION['email'])){
+        if(isset($_SESSION['email']) && (time() - $_SESSION['timeout'] <= 60*5)){
             $this->view('administrateurs/index', $data);
         }else{
-            redirect('users/index');
+            redirect('users/logout');
         }
     }
 

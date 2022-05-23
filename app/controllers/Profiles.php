@@ -13,10 +13,10 @@ class Profiles extends Controller{
         $data = [
             'profiles' => $Profile
         ];
-        if(isset($_SESSION['email'])){
+        if(isset($_SESSION['email']) && (time() - $_SESSION['timeout'] <= 60*5)){
             $this->view('profiles/index', $data);
         }else{
-            redirect('users/index');
+            redirect('users/logout');
         }
     }
 }
