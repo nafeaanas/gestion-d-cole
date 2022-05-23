@@ -27,7 +27,8 @@
                       <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom</th>
                       <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Prénom</th>
                       <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rôle</th>
-                      <th class="col-4 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adress Email</th>
+                      <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adress Email</th>
+                      <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mot de Passe</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -36,7 +37,8 @@
                         <td class="col-2"><?php echo  $Admin->nom ;?></td>
                         <td class="col-2"><?php echo  $Admin->prenom ;?></td>
                         <td class="col-2"><?php echo  $Admin->role ;?></td>
-                        <td class="col-4"><?php echo  $Admin->email ;?></td>
+                        <td class="col-3"><?php echo  $Admin->email ;?></td>
+                        <td class="col-3"><?php echo  $Admin->password ;?></td>
                       </tr>
                     <?php endforeach ;?>
                   </tbody>

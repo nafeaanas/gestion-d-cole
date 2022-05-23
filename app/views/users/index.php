@@ -16,13 +16,13 @@
                 <div class="card-body">
                   <form method="POST" action="<?php echo URLROOT ;?>/users/login" data-parsley-validate>
                     <div class="mb-3">
-                      <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required data-parsley-type="email">
+                      <input type="email" name="email" value="<?php if(isset($_COOKIE['email'])) echo $_COOKIE['email']; ?>" class="form-control form-control-lg" placeholder="Email" required data-parsley-type="email">
                     </div>
                     <div class="mb-3">
-                      <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" required data-parsley-minlength="3">
+                      <input type="password" name="password" value="<?php if(isset($_COOKIE['password'])) echo $_COOKIE['password']; ?>" class="form-control form-control-lg" placeholder="Password" required data-parsley-minlength="3">
                     </div>
                     <div class="form-check form-switch">
-                      <input class="form-check-input" name="remembere" type="checkbox" id="rememberme">
+                      <input class="form-check-input" name="rememberme" type="checkbox" id="rememberme">
                       <label class="form-check-label" for="rememberme">Remember me</label>
                     </div>
                     <div class="text-center">

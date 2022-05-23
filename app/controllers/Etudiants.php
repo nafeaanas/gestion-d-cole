@@ -12,10 +12,10 @@ class Etudiants extends Controller{
         $data = [
             'etudiants' => $etudiants,
         ];
-        if(isset($_SESSION['email'])){
+        if(isset($_SESSION['email']) && (time() - $_SESSION['timeout'] <= 60*5)){
             $this->view('etudiants/index', $data);
         }else{
-            redirect('users/index');
+            redirect('users/logout');
         }
     }
 

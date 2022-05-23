@@ -14,9 +14,9 @@ class Users extends Controller{
         ];
 
         if(isset($_SESSION['email'])){
-            redirect('users/index');
+            redirect('index');
         }else{
-            $this->view('users/index', $data);   
+            $this->view('users/index', $data);
         }
     }
 
@@ -27,12 +27,16 @@ class Users extends Controller{
             $data = [
                'email' => trim($_POST['email']),
                'password' => trim($_POST['password']),
+               'rememberme' => $_POST['rememberme'],
                'error' => ''
             ];
             if((!empty($data['email'])) && (strlen($data['password']) >= 3) && (!empty($data['password']))){
                 $user = $this->userModel->login($data['email'], $data['password']);
                 if($user){
                     $this->createUserSession($user);
+                    if(isset($data['rememberme'])){
+                        $this->createUsercoockie($data);
+                    }
                     redirect('index');
                 }else if($user == false){
                     $data['error'] = 'Your Email Or Password Is Incorrect';
@@ -56,7 +60,6 @@ class Users extends Controller{
     public function edite() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
-
             $data = [
                 'user_id' => $_SESSION['user_id'],
                 'name' => trim($_POST['name']),
@@ -93,6 +96,7 @@ class Users extends Controller{
         $_SESSION['prenom'] = $user->prenom;
         $_SESSION['role'] = $user->role;
         $_SESSION['email'] = $user->email;
+        $_SESSION['timeout'] = time();
     }
 
     //logout and destroy user session
@@ -102,5 +106,18 @@ class Users extends Controller{
         unset($_SESSION['email']);
         session_destroy();
         redirect('users/index');
+    }
+
+    // Craet setcookie
+    public function createUsercoockie($data) {
+        setcookie('email' , $data['email'] , time() + 60*60 , null , null , false , true);
+        setcookie('password' , $data['password'] , time() + 60*60 , null , null , false , true);
+    }
+
+    // Temps pour clear session
+    public function timeout() {
+        if (time() - $_SESSION['timeout'] > 60) {
+            $this->logout();
+        }
     }
 }
