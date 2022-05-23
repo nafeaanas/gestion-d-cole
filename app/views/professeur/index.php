@@ -18,10 +18,11 @@
           <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
               <h1 class="text-uppercase text-sm">professeurs</h1>
-              <button type="button" class="btn btn-primary">Add</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">Add</button>
+              <?php require APPROOT . '/views/inc_models/crdprofesseur.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
-              <div class="table-responsive p-0 overflow-hidden">
+              <div class="table-responsive p-0" style="min-height: 150px; max-height: 480px; overflow-x: hidden;">
                 <table class="table align-items-center justify-content-center mb-0 text-center">
                   <thead>
                     <tr>
@@ -35,21 +36,20 @@
                   </thead>
                   <tbody>
                     <?php foreach ($data['Professeurs'] as $Professeur) : ?>
-                      <tr>
-                        <td class="col-3"><?php echo  $Professeur->nom_complet ;?></td>
-                        <td class="col-1"><?php echo  $Professeur->genre ;?></td>
-                        <td class="col-1"><?php echo  $Professeur->class ;?></td>
-                        <td class="col-2"><?php echo  $Professeur->matiere ;?></td>
-                        <td class="col-3"><?php echo  $Professeur->phone ;?></td>
-                        <th class="col-2 nav-item dropdown">
-                            <p href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="bi bi-three-dots-vertical"></i>
-                            </p>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <li><a class="dropdown-item" href="#">Edite</a></li>
-                              <li><a class="dropdown-item" href="#">Delete</a></li>
-                            </ul>
-                          </th>
+                      <tr class="item_professeur">
+                        <td class="col-3 d-none id"><?php echo  $Professeur->id ;?></td>
+                        <td class="col-3 username"><?php echo  $Professeur->nom_complet ;?></td>
+                        <td class="col-1 genre"><?php echo  $Professeur->genre ;?></td>
+                        <td class="col-1 class"><?php echo  $Professeur->class ;?></td>
+                        <td class="col-2 matiere"><?php echo  $Professeur->matiere ;?></td>
+                        <td class="col-3 phone"><?php echo  $Professeur->phone ;?></td>
+                        <td class="col-2 nav-item dropdown">
+                          <i class="bi bi-three-dots-vertical" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width:40px;">
+                            <li><a class="dropdown-item edite_professeur" data-bs-toggle="modal" data-bs-target="#editModal">Edite</a></li>
+                            <li><a class="dropdown-item" href="<?php echo URLROOT ;?>/Professeurs/delete?professeur=<?php echo  $Professeur->id ;?>">Delete</a></li>
+                          </ul>
+                        </td>
                       </tr>
                     <?php endforeach ;?>
                   </tbody>
@@ -62,3 +62,4 @@
     </div>
   </main>
   <?php require APPROOT . '/views/inc/footer.php'; ?>
+  <script src="<?php echo URLROOT ;?>/js/update_professeur.js"></script>

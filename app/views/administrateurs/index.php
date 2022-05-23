@@ -15,8 +15,9 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-              <h1 class="text-uppercase text-sm">administrateurs</h1>
-              <button type="button" class="btn btn-primary">Add</button>
+              <h1 class="text-uppercase text-sm">Administrateurs</h1>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">Add</button>
+              <?php require APPROOT . '/views/inc_models/crdadministrateur.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
               <div class="table-responsive p-0 overflow-hidden">

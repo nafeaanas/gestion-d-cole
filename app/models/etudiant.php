@@ -67,7 +67,6 @@ class Etudiant {
             return false;
         }
     }
-    
 
     // Edite étudianr
     public function edite($data) {
