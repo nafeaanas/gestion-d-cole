@@ -22,8 +22,8 @@
               <?php require APPROOT . '/views/inc_models/crdetudiant.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
-              <div class="table-responsive p-0" style="max-height: 480px; overflow-x: hidden;">
-                <table class="table align-items-center justify-content-center mb-0 text-center" >
+              <div class="table-responsive p-0" style="min-height: 150px; max-height: 480px; overflow-x: hidden;">
+                <table class="table align-items-center justify-content-center mb-0 text-center">
                   <thead>
                     <tr>
                       <th class="col-2 text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Usermane</th>
@@ -67,3 +67,4 @@
   </main>
 
   <?php require APPROOT . '/views/inc/footer.php'; ?>
+  <script src="<?php echo URLROOT ;?>/js/update_etudiant.js"></script>

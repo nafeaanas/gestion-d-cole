@@ -1,6 +1,6 @@
 document.querySelectorAll('.edite').forEach(function(btn){
     btn.addEventListener('click',function(event){
-            let select = event.target.closest('.item')  ;
+            let select = event.target.closest('.item');
             let id = select.querySelector('.id').textContent;
             let username = select.querySelector('.username').textContent;
             let genre = select.querySelector('.genre').textContent;
