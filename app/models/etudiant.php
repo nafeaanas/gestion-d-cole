@@ -68,4 +68,24 @@ class Etudiant {
         }
     }
     
+
+    // Edite étudianr
+    public function edite($data) {
+        $this->db->query('UPDATE `etudiant` SET `nom_complet`=:username , `genre`=:genre , `class`=:class , `parent`=:parent , `adresse`=:adresse , `date_de_naissance`=:date_de_naissance ,`email`=:email  WHERE `etudiant`.`id`=:id');
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':username', $data['username']);
+        $this->db->bind(':genre', $data['genre']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':class', $data['class']);
+        $this->db->bind(':parent', $data['parent']);
+        $this->db->bind(':date_de_naissance', $data['date_de_naissance']);
+        $this->db->bind(':adresse', $data['adresse']);
+        $this->db->execute();
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
