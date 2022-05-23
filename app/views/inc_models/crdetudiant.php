@@ -1,5 +1,5 @@
 <!-- Modal Add Etudiant -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -14,7 +14,6 @@
             </div>
             <div class="w-25">
               <select class="form-select" name="genre" required>
-                <option>Genre</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
@@ -26,7 +25,6 @@
             </div>
             <div class="w-25">
               <select class="form-select" name="class" required>
-                <option>Chose Your Class</option>
                 <option value="1">Class 1</option>
                 <option value="2">Class 2</option>
                 <option value="3">Class 3</option>
@@ -72,7 +70,6 @@
             </div>
             <div class="w-25">
               <select class="form-select genre" name="genre" required>
-                <option>Genre</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
@@ -84,7 +81,6 @@
             </div>
             <div class="w-25">
               <select class="form-select class" name="class" required>
-                <option>Chose Your Class</option>
                 <option value="1">Class 1</option>
                 <option value="2">Class 2</option>
                 <option value="3">Class 3</option>

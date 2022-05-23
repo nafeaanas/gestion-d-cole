@@ -18,7 +18,7 @@
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
               <h1 class="text-uppercase text-sm">étudiants</h1>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">Add</button>
               <?php require APPROOT . '/views/inc_models/crdetudiant.php'; ?>
             </div>
             <div class="card-body px-3 pt-0 pb-2">
@@ -38,7 +38,7 @@
                   </thead>
                   <tbody>
                     <?php foreach ($data['etudiants'] as $etudiant) : ?>
-                        <tr id="row">
+                        <tr class="item">
                           <td class="d-none id"><?php echo  $etudiant->id ;?></td>
                           <td class="col-2 username"><?php echo  $etudiant->nom_complet ;?></td>
                           <td class="col-1 genre"><?php echo  $etudiant->genre ;?></td>
@@ -47,14 +47,15 @@
                           <td class="col-1 adresse"><?php echo  $etudiant->adresse ;?></td>
                           <td class="col-1 date_de_naissance"><?php echo  $etudiant->date_de_naissance ;?></td>
                           <td class="col-2 email"><?php echo  $etudiant->email ;?></td>
-                          <th class="col-2 nav-item dropdown">
+                          <td class="col-2 nav-item dropdown">
                             <i class="bi bi-three-dots-vertical" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width:40px;">
-                              <li><a class="dropdown-item" id="edite" data-bs-toggle="modal" data-bs-target="#editModal">Edite</a></li>
+                              <li><a class="dropdown-item edite" data-bs-toggle="modal" data-bs-target="#editModal">Edite</a></li>
                               <li><a class="dropdown-item" href="<?php echo URLROOT ;?>/Etudiants/delete?etudiant=<?php echo  $etudiant->id ;?>">Delete</a></li>
                             </ul>
-                          </th>
-                    <?php endforeach ;?>
+                          </td>
+                        </tr>
+                        <?php endforeach ;?>
                   </tbody>
                 </table>
               </div>
@@ -66,29 +67,3 @@
   </main>
 
   <?php require APPROOT . '/views/inc/footer.php'; ?>
-
-  <script>
-    document.querySelectorAll('#edite').forEach(function(btn){
-      btn.addEventListener('click',function(event){
-        let suport = event.target.closest('#row');
-
-        let id = suport.querySelector('.id').textContent;
-        let username = suport.querySelector('.username').textContent;
-        let genre = suport.querySelector('.genre').textContent;
-        let class = suport.querySelector('.class').textContent;
-        let parent = suport.querySelector('.parent').textContent;
-        let adresse = suport.querySelector('.adresse').textContent;
-        let date_de_naissance = suport.querySelector('.date_de_naissance').textContent;
-        let email = suport.querySelector('.email').textContent;
-
-        document.querySelector('#editModal .id').value = id;
-        document.querySelector('#editModal .username').value = "ok";
-        document.querySelector('#editModal .genre').value = genre;
-        document.querySelector('#editModal .class').value = class;
-        document.querySelector('#editModal .parent').value = parent;
-        document.querySelector('#editModal .adresse').value = adresse;
-        document.querySelector('#editModal .date_de_naissance').value = date_de_naissance;
-        document.querySelector('#editModal .email').value = email;
-      })
-    })
-  </script>
