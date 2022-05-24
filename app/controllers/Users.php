@@ -27,14 +27,13 @@ class Users extends Controller{
             $data = [
                'email' => trim($_POST['email']),
                'password' => trim($_POST['password']),
-               'rememberme' => $_POST['rememberme'],
                'error' => ''
             ];
             if((!empty($data['email'])) && (strlen($data['password']) >= 3) && (!empty($data['password']))){
                 $user = $this->userModel->login($data['email'], $data['password']);
                 if($user){
                     $this->createUserSession($user);
-                    if(isset($data['rememberme'])){
+                    if(isset($_POST['rememberme'])){
                         $this->createUsercoockie($data);
                     }
                     redirect('index');
