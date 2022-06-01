@@ -5,12 +5,11 @@
    * URL FORMAT - /controller/method/params
    */
   class Core {
-    protected $currentController = 'Pages';
+    protected $currentController = 'Dashboards';
     protected $currentMethod = 'index';
     protected $params = [];
 
     public function __construct(){
-
       $url = $this->getUrl();
       // Look in controllers for first value
       if(isset($url[0]) && file_exists('../app/controllers/' . ucwords($url[0]). '.php')){
@@ -19,6 +18,17 @@
         // Unset 0 Index
         unset($url[0]);
       }
+
+
+      // error of file NULL
+      elseif($url===NULL){
+        $this->currentController = 'Dashboards';
+      }
+      // error of file note existed
+      else{
+        $this->currentController = 'Errors';
+      }
+
 
       // Require the controller
       require_once '../app/controllers/'. $this->currentController . '.php';
@@ -34,6 +44,17 @@
           // Unset 1 index
           unset($url[1]);
         }
+
+
+        // error of method note existed
+        else{
+          $this->currentController = 'Errors';
+          require_once '../app/controllers/'. $this->currentController . '.php';
+          // Instantiate controller class
+          $this->currentController = new $this->currentController;
+        }
+
+
       }
 
       // Get params

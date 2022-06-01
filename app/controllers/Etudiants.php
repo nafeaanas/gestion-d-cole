@@ -33,7 +33,7 @@ class Etudiants extends Controller{
                 'error' => ''
             ];
             if((!empty($data['username'])) && (!empty($data['genre'])) && (!empty($data['email'])) && (!empty($data['class'])) && (!empty($data['parent'])) && (!empty($data['date_de_naissance'])) && (!empty($data['adresse']))){
-                $etudiant = $this->etudiantModel->edite($data);
+                $etudiant = $this->etudiantModel->register($data);
                 if($etudiant){
                     redirect('etudiants/index', $data);
                 }else if($etudiant == false){
