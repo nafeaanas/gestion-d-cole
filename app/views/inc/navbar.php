@@ -5,10 +5,10 @@
         <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-white active" aria-current="page">
-                <?php if($_SERVER['REQUEST_URI']=='/gestion-d-cole/index') echo'Dashboard'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/profiles') echo'Profile'; else echo 'Table'; ?>
+                <?php if($_SERVER['REQUEST_URI']=='/gestion-d-cole/Dashboards/index') echo'Dashboard'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/profiles') echo'Profile'; else echo 'Table'; ?>
             </li>
         </ol>
-        <h6 class="font-weight-bolder text-white mb-0"><?php if(($_SERVER['REQUEST_URI']=='/gestion-d-cole/index')||($_SERVER['REQUEST_URI']=='/gestion-d-cole/')) echo'Dashboard'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/profiles') echo'Profile'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/Professeurs') echo'Professeurs'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/parents') echo'Parents'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/etudiants') echo'Etudiants'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/administrateurs') echo'Administrateurs'; ?></h6>
+        <h6 class="font-weight-bolder text-white mb-0"><?php if(($_SERVER['REQUEST_URI']=='/gestion-d-cole/Dashboards/index')||($_SERVER['REQUEST_URI']=='/gestion-d-cole/')) echo'Dashboard'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/profiles') echo'Profile'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/Professeurs') echo'Professeurs'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/parents') echo'Parents'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/etudiants') echo'Etudiants'; elseif($_SERVER['REQUEST_URI']=='/gestion-d-cole/administrateurs') echo'Administrateurs'; ?></h6>
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
         <ul class="navbar-nav justify-content-end">
@@ -23,12 +23,12 @@
         </li>
         </ul>
         <!-- Searsh -->
-        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        <!-- <div class="ms-md-auto pe-md-3 d-flex align-items-center">
         <form action="#" class="input-group">
             <button class="input-group-text text-body" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
             <input type="text" class="form-control" placeholder="Type here...">
         </form>
-        </div>
+        </div> -->
 
     </div>
     </div>

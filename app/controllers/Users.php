@@ -14,7 +14,7 @@ class Users extends Controller{
         ];
 
         if(isset($_SESSION['email'])){
-            redirect('index');
+            redirect('Dashboards/index');
         }else{
             $this->view('users/index', $data);
         }
@@ -36,7 +36,7 @@ class Users extends Controller{
                     if(isset($_POST['rememberme'])){
                         $this->createUsercoockie($data);
                     }
-                    redirect('index');
+                    redirect('Dashboards/index');
                 }else if($user == false){
                     $data['error'] = 'Your Email Or Password Is Incorrect';
                     $this->view('users/index', $data);

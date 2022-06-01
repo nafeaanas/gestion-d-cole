@@ -1,6 +1,6 @@
 <?php
 
-  class Pages extends Controller {
+  class Dashboards extends Controller {
     public function __construct(){
       $this->administrateurModel = $this->model('Administrateur');
       $this->etudiantModel = $this->model('Etudiant');
@@ -36,7 +36,7 @@
         ];
 
         if(isset($_SESSION['email'])){
-          $this->view('index', $data);
+          $this->view('dashboards/index', $data);
         }else{
             redirect('users/index');
         }        
